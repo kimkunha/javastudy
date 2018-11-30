@@ -30,31 +30,57 @@ public class HomeWork2 {
 			
 			
 			
-			
-			
-	}// HomWork2
-//			 2번 method 에서 서울시에 살고 있는 인원수를 출력 할것.
-			public void seoulLiving(HomeWork1[] hkArr) {
-		
-			HomeWork1 tempData=null;
+/*			HomeWork1 tempData=null;
 			for(int i=0; i<hkArr.length; i++) {
 				tempData=hkArr[i];
 				if( tempData.getAddr().startsWith("서울시")==true) {
-							 	seoulliving+=1;	    };
-							 
-				System.out.println(tempData.getNum()+" , "+tempData.getName()+" , "+tempData.getAddr()+" , "+tempData.getAge()+" , "+
-				tempData.gerGender());
-				}
-				System.out.println("서울에 사는 사람"+seoulliving+"명");
+					seoulliving+=1;	    };
+					
+					System.out.println(tempData.getNum()+" , "+tempData.getName()+" , "+tempData.getAddr()+" , "+tempData.getAge()+" , "+
+							tempData.gerGender());
 			}
+			System.out.println("서울에 사는 사람"+seoulliving+"명");
+	}
+			*/
+	
+			
+	
+	
+	
+	
+		public void seoulLiving(HomeWork1[] hkArr) {
+			if( tempData.getAddr().startsWith("서울시")==true) {
+				seoulliving+=1;	    };
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}// HomWork2
+//			 2번 method 에서 서울시에 살고 있는 인원수를 출력 할것.
+
+		
+				
+				
+				
+				
+				
+				
+				
+				
 			
 			
 			
 
 	public static void main(String[] args) {
 		new HomeWork2();
-		HomeWork2 hk2= new HomeWork2();
-		hk2.seoulLiving(hkArr);
 	}// main
 
 }// class

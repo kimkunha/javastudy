@@ -18,6 +18,7 @@ public class Person {
 	 * 	눈 2개, 코 1개, 입 1개를 가진 사람 객체를 생성
 	 */
 	public Person() {
+//		super(); //this하고 같이 사용 불가능
 		this(2,1,1);
 //		eye=2;
 //		nose=1;
