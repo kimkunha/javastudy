@@ -1,0 +1,15 @@
+package day1204;
+//18.12.04 6¹ø ÀÚ·á (Anony class Á¤ÀÇ   4¹ø ~ 6¹ø ¿¬°è)
+public class AnonyImpl implements AnonyInter{
+
+	@Override
+	public String getName() {
+		return "ÃÝ¸óµµ";
+	}
+
+	@Override
+	public String getMsg() {
+		return "¿Â´¢¼î";
+	}
+
+}//class
