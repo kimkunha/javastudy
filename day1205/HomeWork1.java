@@ -31,10 +31,8 @@ public class HomeWork1 {
 	
 	public static void main(String[] args) {
 		HomeWork1 hk1 = new HomeWork1();
-		for(int i=0; i<100; i++) {
 			hk1.lottoNumber();
-			System.out.println();
-		}
+		
 		
 		
 	
