@@ -1,6 +1,5 @@
 package day1127;
 
-import java.util.concurrent.SynchronousQueue;
 
 /**
  * 문자열 저장소의 주소를 저장하고, 문자열을 다루는 기능을 제공하는 String class의 사용<br>

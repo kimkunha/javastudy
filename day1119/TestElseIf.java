@@ -1,6 +1,5 @@
 package day1119;
 
-import java.util.concurrent.SynchronousQueue;
 
 /**
  * else~if : 연관된 여러 조건을 비교할 때.<br>

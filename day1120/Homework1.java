@@ -3,7 +3,6 @@ package day1120;
 public class Homework1 {
 
 	public static void main(String[] args) {
-		int sum=0;
 		
 		
 		System.out.println("=========구구단 시작=================");

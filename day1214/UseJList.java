@@ -25,7 +25,6 @@ import javax.swing.event.ListSelectionListener;
 public class UseJList extends JFrame implements ActionListener, MouseListener /*ListSelectionListener*/ {
 	private JList<String> jl; //View
 	private DefaultListModel<String> dlm; //Model
-	
 	private JLabel jlOutput;
 	private JButton jb;
 	
