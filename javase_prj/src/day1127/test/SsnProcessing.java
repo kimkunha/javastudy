@@ -96,7 +96,7 @@ public class SsnProcessing {
 
 	// 1-7
 	public char returnGender() {
-		char gender = 'ŸÓ';
+		char gender = 'A';
 
 		switch (ssn.charAt(7)) {
 		case '1':

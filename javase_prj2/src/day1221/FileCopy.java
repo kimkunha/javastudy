@@ -9,30 +9,27 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import javax.activation.FileDataSource;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
-//18/12/21	-1번자료-		(File Copy)
-/**
- * @author owner
- *
- */
+//18.12.21	-1번자료- (FileCopy)
 @SuppressWarnings("serial")
 public class FileCopy extends JFrame implements ActionListener, Runnable {
 	private JButton jb;
 	private JProgressBar jpb;
 	private long fileLen;
 	private int cnt;
-	
+	File file;
 	
 	public FileCopy() {
 		super("파일복사");
 		jb=new JButton("파일선택");
-		jpb=new JProgressBar(0,100);
+		jpb=new JProgressBar(0, 100);
 		jpb.setString("진척도");
-		jpb.setValue(50);
+//		jpb.setValue(50);
 		
 		JPanel jp=new JPanel();
 		jp.add(jb);
@@ -45,11 +42,52 @@ public class FileCopy extends JFrame implements ActionListener, Runnable {
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-	
 	}//FileCopy
-	
-	
-	
+	@Override
+	public void run() {
+		StringBuilder copyFileName=new StringBuilder(file.getAbsolutePath());
+		copyFileName.insert(copyFileName.lastIndexOf("."),"_bak");
+		FileInputStream fis=null;
+		FileOutputStream fos=null;
+		try {
+			
+			//원본파일에 스트림 연결
+			fis=new FileInputStream(file);
+			fos=new FileOutputStream(copyFileName.toString());// _back가 들어간 이름
+			//파일과 연결된 스트림에서 값을 얻는다. 
+			int temp=0;
+			fileLen=file.length();
+			cnt=0;
+			int i=0;
+			while( (temp=fis.read()) != -1) {
+				fos.write(temp);
+				fos.flush();
+				jpb.setValue( (int)(( i/(double)fileLen)*100) );
+				if(jpb.getValue()==100) {
+					break;
+				}
+				//읽어 들인내용을 _bak가 붙은 파일을 생성하여 출력 (복사)
+//				System.out.print( (char)temp );
+				i++;
+			}//end while
+			JOptionPane.showMessageDialog(this, file+"복사 성공");
+		}catch(IOException ie) {
+		}finally {
+			if( fis != null ) { try {
+				fis.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} }//end if
+			if( fos != null ) { try {
+				fos.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} }//end if
+		}//end finally
+	}//run
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		FileDialog fd=new FileDialog(this, "파일선택", FileDialog.LOAD);
@@ -57,100 +95,52 @@ public class FileCopy extends JFrame implements ActionListener, Runnable {
 		
 		String path=fd.getDirectory();
 		String name=fd.getFile();
-		if( path !=null ){
-			File file=new File(path+name);
+		if( path != null ) {
+			file=new File(path+name);
 			try {
 				copy(file);
-				JOptionPane.showMessageDialog(this, file+"복사 성공");
+				
 			} catch (FileNotFoundException fnfe) {
-				JOptionPane.showMessageDialog(this, "파일이 존재하지 않습니다");
+				JOptionPane.showMessageDialog(this, "파일이 존재하지 않습니다.");
 				fnfe.printStackTrace();
 			} catch (IOException ie) {
-				JOptionPane.showMessageDialog(this, "입출력 작업에 문제 발생");
+				JOptionPane.showMessageDialog(this, "입출력 작업에 문제 발생.");
 				ie.printStackTrace();
-			}
+			}//end catch
 		}//end if
 		
 	}//actionPerformed
-
-	public void copy(File file) throws FileNotFoundException, IOException {
+	
+	public void copy(File file)throws FileNotFoundException,IOException {
 		
-		int selectValue=JOptionPane.showConfirmDialog(this, "파일을 복사 하시겠습니까?");
-		switch(selectValue){
-			case JOptionPane.OK_OPTION :
-				StringBuilder copyFileName=new StringBuilder(file.getAbsolutePath());
-				copyFileName.insert(copyFileName.lastIndexOf("."),"_back");
-//				System.out.println( copyFileName );
+		int selectValue=JOptionPane.showConfirmDialog(this, "파일을 복사하시겠습니까?");
+		
+		switch (selectValue) {
+		case JOptionPane.OK_OPTION:
+		
+//			System.out.println( copyFileName );
+			
+	
+				Thread t =new Thread(this);
+				t.start();
+//				 HDD가 읽어들이는 크기를 무시하고 1byte씩 읽어들여 사용
+			
+				//HDD가 한번에 읽어들이는 크기를 그대로 사용
+//				byte[] temp=new byte[512];
+//				int len=0;
+//				while(( len=fis.read(temp)) != -1) {
+//					fos.write(temp, 0, len);
+//					fos.flush();					
+//				}//end while
 				
-				FileInputStream fis=null;
-				FileOutputStream fos=null;
-				
-				try {
-					
-					//원본파일에 스트림 연결
-					fis=new FileInputStream( file );
-					fos=new FileOutputStream(copyFileName.toString()); //_back가 들어간 이름
-					
-//					파일과 연결된 스트림에서 값을 얻는다.
-					int temp=0;
-					fileLen=file.length();
-//					System.out.println(fileLen);
-					cnt=0;
-					Thread t= new Thread(this);
-					t.start();
-//					HDD가 읽어들이는 크기를 무시하고 1byte씩 읽어들여 사용
-					while( (temp=fis.read()) != -1) {
-						fos.write(temp);
-						fos.flush();
-//						jpb.setValue( (int) ( (i/(double)fileLen)*100 ));
-//						System.out.println(jpb.getValue());
-						//읽어 들인내용을 _bak가 붙은 파일을 생성하여 출력 (복사)
-//							System.out.println( (char)temp );
-						cnt++;
-					}//end while
-					
-					
-					//HDD가  한번에 읽어들이는 크기를 그대로 사용
-//					byte[]temp =new byte[512];
-//					int len=0;
-//					while((len = fis.read(temp)) !=-1  ) {
-//						fos.write(temp,0,len);
-//						fos.flush();
-//					}//end while
-					
-				}finally {
-					if(fis != null) {fis.close(); }
-					if(fos != null) {fos.close(); }
-				}//end finally
-				
-				
-				
+		
+			
 		}//end switch
 		
 	}//copy
-	
-	
-	@Override
-	public void run() {
-		for(int i=0; i< fileLen; i++) {
-			try {
-				Thread.sleep(500);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}//end catch
-			jpb.setValue( (int) ( ( cnt /(double)fileLen)*100 ));
-		}
-	}//run
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	public static void main(String[] args) {
 		new FileCopy();
 	}//main
+
 }//class
