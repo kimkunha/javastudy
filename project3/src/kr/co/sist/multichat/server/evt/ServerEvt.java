@@ -34,7 +34,7 @@ public class ServerEvt extends WindowAdapter implements ActionListener, Runnable
 		try {
 			server = new ServerSocket(36000);
 			DefaultListModel<String> dlmTemp = sv.getDlmChatList();
-			dlmTemp.addElement("서버 가동중");
+			dlmTemp.addElement("1조 대기 중..");
 
 			Socket someClient = null;
 			InetAddress ia = null;
@@ -90,6 +90,15 @@ public class ServerEvt extends WindowAdapter implements ActionListener, Runnable
 	}// actionPerformed
 
 //서버소켓 만들고 스레드만들기 ( 1조 창만 우선)
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }// class
 
 

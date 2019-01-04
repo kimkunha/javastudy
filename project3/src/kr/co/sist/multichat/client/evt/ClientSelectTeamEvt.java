@@ -7,6 +7,7 @@ import java.awt.event.ItemListener;
 
 import javax.swing.JOptionPane;
 
+import kr.co.sist.multichat.client.view.ClientChatView;
 import kr.co.sist.multichat.client.view.ClientSelectTeamView;
 
 public class ClientSelectTeamEvt implements ActionListener, ItemListener {
@@ -31,6 +32,7 @@ public class ClientSelectTeamEvt implements ActionListener, ItemListener {
    public void itemStateChanged(ItemEvent ie) {
       if (ie.getSource() == cstv.getJrTeam1()) {
          selectTeam = "1Á¶";
+         new ClientChatView();
       } else if (ie.getSource() == cstv.getJrTeam2()) {
          selectTeam = "2Á¶";
       } else if (ie.getSource() == cstv.getJrTeam3()) {

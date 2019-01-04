@@ -29,7 +29,7 @@ public class ClientSelectUserView extends JDialog {
       
       add("Center", jspUser);
       
-      setBounds(ccv.getX()+485, ccv.getY()+0, 300, 400);
+      setBounds(ccv.getX()+585, ccv.getY()+0, 300, 400);
       setVisible(true);
       
       setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);

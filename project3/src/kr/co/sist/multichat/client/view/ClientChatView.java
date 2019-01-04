@@ -17,23 +17,24 @@ import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.border.TitledBorder;
 
 import kr.co.sist.multichat.client.evt.ClientChatEvt;
 
 public class ClientChatView extends JFrame {
     
-    private JTextArea jtfNick, jtaChatDisplay;
-    private JTextField jtfTalk;
+    private JTextArea jtaNick, jtaChatDisplay;
+    private JTextField jtfTalk, jtfNick;
     private JButton jbConnect, jbCapture, jbClose, jbUser;
-    private JLabel jlNick;
+//    private JLabel jlNick;
     
-    private JScrollPane jsp;
+    private JScrollPane jspTalkDisplay;
     
     public ClientChatView () {
         super("채팅 클라이언트");    
         
-        jlNick =new JLabel("대화명");
-        jtfNick=new JTextArea();
+        jtfNick =new JTextField(10);
+        jtaNick=new JTextArea();
         jbConnect=new JButton("접속");
         jbCapture=new JButton("갈무리");
         jbClose=new JButton("종료");
@@ -41,14 +42,22 @@ public class ClientChatView extends JFrame {
         
         
         jtaChatDisplay=new JTextArea();
-        jsp=new JScrollPane(jtaChatDisplay);
+        jspTalkDisplay=new JScrollPane(jtaChatDisplay);
+        
+        jspTalkDisplay.setBorder(new TitledBorder("대화내용"));
+        jspTalkDisplay.getVerticalScrollBar().setValue(jspTalkDisplay.getVerticalScrollBar().getMaximum());
+        
+        jtaChatDisplay.setEditable(false);
+        
+        
         
         jtfTalk=new JTextField();
+        jtfTalk.setBorder(new TitledBorder("대화"));
         
         
         Panel panelNorth=new Panel();
         panelNorth.setLayout(new GridLayout(1, 6));
-        panelNorth.add(jlNick);
+        panelNorth.add(new JLabel("대화명",JLabel.CENTER));
         panelNorth.add(jtfNick);
         panelNorth.add(jbConnect);
         panelNorth.add(jbCapture);
@@ -57,13 +66,14 @@ public class ClientChatView extends JFrame {
         
         setLayout(new BorderLayout());
         add("North",panelNorth);
-        add("Center", jsp);
+        add("Center", jspTalkDisplay);
         add("South", jtfTalk);
         
         ClientChatEvt cce=new ClientChatEvt(this);
         jbUser.addActionListener(cce);
+        jbClose.addActionListener(cce);
         
-        setBounds(300, 300, 500 ,500);
+        setBounds(300, 300, 600 ,400);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
@@ -79,11 +89,25 @@ public class ClientChatView extends JFrame {
     public JButton getJbUser() {
         return jbUser;
     }
-    public static void main(String[] args) {
+    public JScrollPane getJspTalkDisplay() {
+    	return jspTalkDisplay;
+    }
+    public void setJspTalkDisplay(JScrollPane jspTalkDisplay) {
+    	this.jspTalkDisplay = jspTalkDisplay;
+    }
+    
+    
+    public JTextField getJtfNick() {
+		return jtfNick;
+	}
+	public JTextArea getJtaChatDisplay() {
+		return jtaChatDisplay;
+	}
+	public static void main(String[] args) {
         new ClientChatView();
         
     
-    }
+    }//main
 
 
 }
