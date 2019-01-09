@@ -28,6 +28,22 @@ public class CpEmp2AllVO {
 	public String getHiredate() {
 		return hiredate;
 	}
+
+	
+	//ToString method ¡ﬂø‰«‘
+	@Override
+	public String toString() {
+		return "CpEmp2AllVO [empno=" + empno + ", sal=" + sal + ", ename=" + ename + ", hiredate=" + hiredate + "]";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

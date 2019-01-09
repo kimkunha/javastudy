@@ -1,4 +1,4 @@
-package day0107;
+package day0108;
 import java.awt.ScrollPane;
 
 import javax.swing.JButton;
@@ -31,8 +31,8 @@ class ZipcodeView extends JFrame {
 		tabZipcode.getTableHeader().setReorderingAllowed(false); // 컬럼이동 막기
 		tabZipcode.setRowHeight(24); //행의 크기
 		
-		tabZipcode.getColumnModel().getColumn(0).setPreferredWidth(30);
-		tabZipcode.getColumnModel().getColumn(1).setPreferredWidth(300);
+		tabZipcode.getColumnModel().getColumn(0).setPreferredWidth(60);
+		tabZipcode.getColumnModel().getColumn(0).setPreferredWidth(300);
 		//여까지
 		
 		JScrollPane jsp=new JScrollPane(tabZipcode);
