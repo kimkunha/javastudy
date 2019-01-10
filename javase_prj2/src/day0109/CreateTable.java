@@ -21,7 +21,6 @@ public class CreateTable {
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
 		
-		
 		try {
 		//1. 드라이버 로딩
 		//2. Connection 얻기

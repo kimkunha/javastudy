@@ -18,10 +18,10 @@ import oracle.jdbc.OracleTypes;
  * @author owner
  */
 public class UseCallableStatementDAO{
+	//private static으로 스태틱 변수 선언한다.
+	private static UseCallableStatementDAO ucs_dao ;
 	
-	private static UseCallableStatementDAO ucs_dao;
-	
-	private UseCallableStatementDAO() {
+	private UseCallableStatementDAO() {//생성자를 private로 만든다.
 	}
 	
 	public static UseCallableStatementDAO getInstance() {

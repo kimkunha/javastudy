@@ -1,4 +1,4 @@
-package day0108;
+package day0108.singleton;
 //19.01.08 -2번자료- (singleton) 1-2연계
 public class UseSingleton {
 

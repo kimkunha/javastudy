@@ -1,4 +1,4 @@
-package day0108;
+package day0108.singleton;
 //19.01.08 -1번자료- (singleton) 1-2연계
 /**
  *	실행중인JVM에서 하나의 객체가 만들어지고, 하나의 객체만 사용되는 pattern
