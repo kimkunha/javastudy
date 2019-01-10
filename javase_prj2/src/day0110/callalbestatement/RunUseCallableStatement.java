@@ -1,4 +1,4 @@
-package day0109.callalbestatement;
+package day0110.callalbestatement;
 import java.awt.Font;
 //19.01.09
 import java.sql.SQLException;
@@ -14,9 +14,6 @@ import javax.swing.border.TitledBorder;
 import day0107.cpemp2.CpEmp2AllVO;
 import day0107.cpemp2.CpEmp2OneVO;
 import day0107.cpemp2.CpEmp2VO;
-import day0110.TestProcAllVO;
-import day0110.TestProcOneVO;
-import day0110.TestProcUpdateVO;
 
 public class RunUseCallableStatement {
 

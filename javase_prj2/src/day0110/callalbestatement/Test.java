@@ -1,4 +1,4 @@
-package day0110;
+package day0110.callalbestatement;
 
 import java.sql.Connection;
 import java.sql.SQLException;

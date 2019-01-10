@@ -1,4 +1,4 @@
-package day0110;
+package day0110.callalbestatement;
 //19.01.10 -3번째자료- VO (한줄 조회)
 public class TestProcOneVO {
 

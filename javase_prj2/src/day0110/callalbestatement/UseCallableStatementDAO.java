@@ -1,4 +1,4 @@
-package day0109.callalbestatement;
+package day0110.callalbestatement;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -9,9 +9,6 @@ import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 
-import day0110.TestProcAllVO;
-import day0110.TestProcOneVO;
-import day0110.TestProcUpdateVO;
 import kr.co.sist.connection.GetConnection;
 import oracle.jdbc.OracleTypes;
 

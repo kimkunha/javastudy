@@ -1,4 +1,4 @@
-package day0109.callalbestatement;
+package day0110.callalbestatement;
 //19.01.09
 import java.sql.CallableStatement;
 import java.sql.Connection;

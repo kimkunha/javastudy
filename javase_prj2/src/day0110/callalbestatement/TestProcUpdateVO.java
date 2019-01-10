@@ -1,4 +1,4 @@
-package day0110;
+package day0110.callalbestatement;
 //19.01.10 -1번째자료- VO
 public class TestProcUpdateVO {
 	private int empno, sal;

@@ -1,4 +1,4 @@
-package day0109.callalbestatement;
+package day0110.callalbestatement;
 
 public class TestProcVO {
 	private int empno,  sal; 
