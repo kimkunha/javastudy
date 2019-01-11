@@ -2,6 +2,7 @@ package study;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 import kr.co.sist.connection.GetConnection;
 
@@ -19,17 +20,19 @@ public class getconn {
 		return gc;
 	}
 	
-	public Connection getConn(String url, String id, String pass ) {
+	public Connection getConn(String url, String id, String pass ) throws SQLException {
 		Connection con=null;
 		
-		String url="jdbc:oracle:thin:@localhost:1521:orcl";
-		String id="scott";
-		String pass="tiger";
+		//1. 드라이버 로딩
+			try {
+				Class.forName("oracle.jdbc.OracleDriver");
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}//end catch
 		
-		con=DriverManager.getConnection(url, id, pass);
-		
-		
-		
+		//2. Connection
+			con=DriverManager.getConnection(url, id, pass);
+	
 		
 		return con;
 	}

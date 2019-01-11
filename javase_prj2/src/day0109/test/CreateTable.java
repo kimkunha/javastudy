@@ -19,7 +19,6 @@ public class CreateTable {
 			preparedStatementLogin pstmt=null;
 			ResultSet rs=null;
 			
-			try {
 			//1. 드라이버 로딩
 			//2 커넥션 얻기
 				String url="jdbc:oracle:thin:@127.0.0.1:1521:orcl";
@@ -30,12 +29,7 @@ public class CreateTable {
 			//4 바인드
 			//5
 			//6
-			
-			
-			
-			
-			
-			
+	
 		}//생성자
 		
 }//class
