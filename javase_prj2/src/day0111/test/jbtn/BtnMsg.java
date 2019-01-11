@@ -12,7 +12,7 @@ public class BtnMsg extends JFrame  {
 //컴포넌트라고 배열을 못쓰는건 아니다. 이번에 배열을 사용해서 사용해보자. 코드 단축.
 	private JButton[] jbtNames;  //사용할 컴포넌트
 	private String[] names;	//배열에 넣을 이름
-	private String[] msg, msg2;	//배열에 넣을 메세지
+	private String[] msg;	//배열에 넣을 메세지
 	
 	public BtnMsg() {
 		super("이름을 클릭해 주세요.");
@@ -41,10 +41,29 @@ public class BtnMsg extends JFrame  {
 		setBounds(200, 150, 300,400);
 		setVisible(true);
 		
+		//이벤트 처리
+		BtnMsgEvt bme=new BtnMsgEvt(this);
+		
+		addWindowListener(bme);
+		for(int i=0; i<jbtNames.length; i++) {
+			jbtNames[i].addActionListener(bme);
+			
+		}
+		
 	}//생성자
 
+	
+	
 	public JButton[] getJbtNames() {
 		return jbtNames;
+	}
+
+	public String[] getNames() {
+		return names;
+	}
+
+	public String[] getMsg() {
+		return msg;
 	}
 	
 	

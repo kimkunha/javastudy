@@ -1,4 +1,4 @@
-package day0111;
+package day0111.namecard;
 
 import javax.swing.CellEditor;
 import javax.swing.ImageIcon;
