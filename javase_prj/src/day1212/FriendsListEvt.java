@@ -57,8 +57,8 @@ public class FriendsListEvt extends WindowAdapter implements ActionListener, Ite
 	 * 친구 리스트에서 선택한 친구를 차단 리스트로 이동
 	 */
 	private void blockFriend() {
-		List tempFriend=fl.getListFriend();
 		//선택한 친구를 얻어와서
+		List tempFriend=fl.getListFriend();
 		String name=tempFriend.getSelectedItem();
 		//차단으로 보낸다.
 		fl.getListBlockFriend().add(name);

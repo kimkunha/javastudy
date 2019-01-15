@@ -53,6 +53,9 @@ public class TestArray {
 	public static void main(String[] args) {
 		TestArray ta=new TestArray();
 		ta.TestLotto();
+		ta.TestLotto();
+		ta.TestLotto();
+		ta.TestLotto();
 	}// main
 
 }// class
