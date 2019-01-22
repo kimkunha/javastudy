@@ -9,7 +9,9 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
@@ -32,6 +34,11 @@ public class LunchMainView extends JFrame{
 	//calendar 추가
 	private Calendar cal;
 	
+	public static String adminId;
+	
+	private JPopupMenu jpOrderMenu;
+	private JMenuItem jmOrderRemove, jmOrderStatus;
+	
 public LunchMainView(String adminName ) {
 	super("[도시락 관리 [ 로그인 계정 : "+adminName+" ]");
 	
@@ -40,22 +47,69 @@ public LunchMainView(String adminName ) {
 			jtb=new JTabbedPane();
 			//도시락
 			String[] lunchColumns= {"번호","도시락코드","이미지","도시락명","가격"};
-			dtmLunch=new DefaultTableModel(lunchColumns,4);
-			jtLunch=new JTable( dtmLunch );
+			dtmLunch=new DefaultTableModel(lunchColumns,4) {
+				@Override
+				public boolean isCellEditable(int row, int column) {	//더블 클릭시 수정못하게 설정하는 method
+					return false;
+				}
+			};
+			
+			jtLunch=new JTable( dtmLunch )   { //이미지 나오게 어나니머스 클래스 사용. 
+				public Class getColumnClass(int column) {
+					return getValueAt(0, column).getClass();
+				}
+			};
+			
+			//도시락 테이블 크기 설정 : 전체 width 가 800이라 나눠가져가야 한다, 전체 w800, 이미지w122 hieght(110); 
+			jtLunch.getColumnModel().getColumn(0).setPreferredWidth(80);
+			jtLunch.getColumnModel().getColumn(1).setPreferredWidth(120);
+			jtLunch.getColumnModel().getColumn(2).setPreferredWidth(125);
+			jtLunch.getColumnModel().getColumn(3).setPreferredWidth(265);
+			jtLunch.getColumnModel().getColumn(4).setPreferredWidth(220);
+			
+			//테이블의 높이
+			jtLunch.setRowHeight(110);
 			
 			
 			//정산
-			String[] calcColumns= {"번호","도시락명","수량","가격"};
-			dtmCalc=new DefaultTableModel(calcColumns, 4);
+			String[] calcColumns= {"번호","도시락명(도시락코드)","수량","가격"};
+			dtmCalc=new DefaultTableModel(calcColumns, 4) {
+				@Override
+				public boolean isCellEditable(int row, int column) {
+					return false;
+				}//isCellEditable
+			};
 			JTable jtCalc=new JTable( dtmCalc );
-			
+			jtCalc.getColumnModel().getColumn(0).setPreferredWidth(100);
+			jtCalc.getColumnModel().getColumn(1).setPreferredWidth(400);
+			jtCalc.getColumnModel().getColumn(2).setPreferredWidth(150);
+			jtCalc.getColumnModel().getColumn(3).setPreferredWidth(150);
+			//정산테이블의 높이 설정
+			jtCalc.setRowHeight(25);
 			
 			//주문
 			String[] orderColumns= {"번호","주문번호","도시락코드","도시락명","주문자명",
 					"수량","가격","주문일","연락처","주문자ip","제작상태"};
-			dtmOrder=new DefaultTableModel(orderColumns, 4);
+			dtmOrder=new DefaultTableModel(orderColumns, 4) {
+				@Override
+				public boolean isCellEditable(int row, int column) {
+					return false;
+				}
+			};
 			jtOrder=new JTable(dtmOrder);
 			
+			jtOrder.getColumnModel().getColumn(0).setPreferredWidth(30);
+			jtOrder.getColumnModel().getColumn(1).setPreferredWidth(105);
+			jtOrder.getColumnModel().getColumn(2).setPreferredWidth(70);
+			jtOrder.getColumnModel().getColumn(3).setPreferredWidth(70);
+			jtOrder.getColumnModel().getColumn(4).setPreferredWidth(55);
+			jtOrder.getColumnModel().getColumn(5).setPreferredWidth(30);
+			jtOrder.getColumnModel().getColumn(6).setPreferredWidth(50);
+			jtOrder.getColumnModel().getColumn(7).setPreferredWidth(130);
+			jtOrder.getColumnModel().getColumn(8).setPreferredWidth(100);
+			jtOrder.getColumnModel().getColumn(9).setPreferredWidth(100);
+			jtOrder.getColumnModel().getColumn(10).setPreferredWidth(60);
+			jtOrder.setRowHeight(23);
 			jbtAddLunch=new JButton("도시락 추가");
 			jbtCalcOrder=new JButton("정산");
 			
@@ -114,6 +168,14 @@ public LunchMainView(String adminName ) {
 			
 			jtb.addTab("정산", jpCalc);
 	
+			jpOrderMenu=new JPopupMenu();
+			jmOrderRemove =new JMenuItem("주문삭제");
+			jmOrderStatus=new JMenuItem("제작완료");
+			
+			jpOrderMenu.add(jmOrderStatus);
+			jpOrderMenu.addSeparator();
+			jpOrderMenu.add(jmOrderRemove);
+			
 			//탭을 프레임에 배치
 			add("Center", jtb);
 			
@@ -133,6 +195,9 @@ public LunchMainView(String adminName ) {
 			jbtCalcOrder.addActionListener(lmc);
 			
 			jcbMonth.addActionListener(lmc);
+			
+			jmOrderRemove.addActionListener(lmc);
+			jmOrderStatus.addActionListener(lmc);
 			
 			
 	setBounds(100, 100, 800, 600);
@@ -225,6 +290,18 @@ public DefaultComboBoxModel<Integer> getCbmMonth() {
 
 public DefaultComboBoxModel<Integer> getCbmDay() {
 	return cbmDay;
+}
+
+public JPopupMenu getJpOrderMenu() {
+	return jpOrderMenu;
+}
+
+public JMenuItem getJmOrderRemove() {
+	return jmOrderRemove;
+}
+
+public JMenuItem getJmOrderStatus() {
+	return jmOrderStatus;
 }
 
 

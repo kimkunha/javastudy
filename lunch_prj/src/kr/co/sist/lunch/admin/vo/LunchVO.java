@@ -1,13 +1,13 @@
 package kr.co.sist.lunch.admin.vo;
 
 public class LunchVO {
-	private String lunchCode, lunchname, img;
+	private String lunchCode, lunchName, img;
 	private int price;
 
-	public LunchVO(String lunchCode, String lunchname, String img, int price) {
+	public LunchVO(String lunchCode, String lunchName, String img, int price) {
 		super();
 		this.lunchCode = lunchCode;
-		this.lunchname = lunchname;
+		this.lunchName = lunchName;
 		this.img = img;
 		this.price=price;
 	}//»ý¼ºÀÚ
@@ -17,8 +17,8 @@ public class LunchVO {
 		return lunchCode;
 	}
 
-	public String getLunchname() {
-		return lunchname;
+	public String getLunchName() {
+		return lunchName;
 	}
 
 	public String getImg() {
@@ -32,7 +32,7 @@ public class LunchVO {
 
 	@Override
 	public String toString() {
-		return "LunchVO [lunchCode=" + lunchCode + ", lunchname=" + lunchname + ", img=" + img + "]";
+		return "LunchVO [lunchCode=" + lunchCode + ", lunchname=" + lunchName + ", img=" + img + "]";
 	}
 	
 	

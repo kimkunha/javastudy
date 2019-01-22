@@ -1,11 +1,13 @@
 package kr.co.sist.lunch.user.run;
 
 import kr.co.sist.lunch.admin.view.LunchLoginView;
+import kr.co.sist.lunch.user.view.LunchClientView;
 
 public class LunchClientRun {
 
 	public static void main(String[] args) {
-	new LunchLoginView();
+		new LunchClientView();
 	}//main
 
 }//class
+

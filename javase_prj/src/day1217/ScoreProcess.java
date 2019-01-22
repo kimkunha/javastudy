@@ -161,6 +161,8 @@ public class ScoreProcess {
 	public static void main(String[] args) {
 		ScoreProcess sp = new ScoreProcess();
 		sp.InputMenu();
+
+		
 	}
 
 }

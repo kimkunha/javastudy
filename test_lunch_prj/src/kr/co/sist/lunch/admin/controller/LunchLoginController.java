@@ -6,6 +6,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import kr.co.sist.lunch.admin.view.LunchLoginView;
@@ -35,17 +36,34 @@ public class LunchLoginController extends WindowAdapter implements ActionListene
 		
 	}//actionPerformed
 
-//	public boolean checkIdEmpty() {
-//		boolean flag=false;
-//		//아이디 검증
-//		JTextField jtf=llv.getJtfId();
-//		if(jtf.getText().trim().equals("")) {
-//			jtf.setText("");
-//			jtf.requestFocus();
-//		}//end if
-		
-		
+	public boolean checkIdEmpty() {
+		boolean flag=false;
+		JTextField jtf=llv.getJtfId();
+		if(jtf.getText().trim().equals("")) {
+			jtf.setText("");
+			jtf.requestFocus();
+			flag=true;
+		}//checkIdEmpty
+		return flag;
 	}//checkIdEmpty
+		
+	public boolean checkPassEmpty() {
+		boolean flag=false;
+		JPasswordField jpfPass=llv.getJpfPass();
+		String pass=new String(jpfPass.getPassword());
+		
+		if(pass.trim().equals("")) {
+			jpfPass.setText("");
+		
+		}
+		
+		
+		
+		
+		
+		
+		return flag;
+	}//checkPassEmpty
 	
 	
 	

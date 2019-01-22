@@ -105,13 +105,15 @@ public class UseJList extends JFrame implements ActionListener, MouseListener /*
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		int idx=jl.getSelectedIndex();
-		String value=dlm.get(idx);
-		//JLabel에 추가
-		jlOutput.setText(value);
-		//선택된 값을 삭제
-		dlm.remove(idx);
-		System.out.println("삭제");
+//		int idx=jl.getSelectedIndex();
+//		String value=dlm.get(idx);
+//		//JLabel에 추가
+//		jlOutput.setText(value);
+//		//선택된 값을 삭제
+//		dlm.remove(idx);
+//		System.out.println("삭제");
+		
+		
 	}
 
 	@Override

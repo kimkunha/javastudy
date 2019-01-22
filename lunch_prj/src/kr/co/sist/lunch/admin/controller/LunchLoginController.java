@@ -56,6 +56,7 @@ public class LunchLoginController extends WindowAdapter implements ActionListene
 				jtf.requestFocus();
 			}else {
 				new LunchMainView(adminName);
+				LunchMainView.adminId=id; // 로그인이 성공했다면 모든 ida를 모든 객체에서 사용할 수 있또록 static변수에 설정한다.
 				llv.dispose();
 		}//end if
 		}//end if
