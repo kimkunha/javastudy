@@ -24,7 +24,6 @@ public class WorkEvent extends WindowAdapter implements ActionListener, ItemList
 
 	@Override
 	public void actionPerformed(ActionEvent ae) {
-		if(ae.getSource() == )
 	}
 
 }//class

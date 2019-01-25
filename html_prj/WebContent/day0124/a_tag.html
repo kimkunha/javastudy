@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>다른 페이지와 연결 hyper link</title>
+</head>
+<body>
+[<a href="#kim" name="top">김정윤</a>|
+<a href="#gong">공선의</a>|
+<a href="#jung">정택성</a>]<br/>
+<strong>URL(Uniform Resource Locator)사용</strong>
+<!-- 파일명은 대소문자 구별한다. 틀릴시 창이 안뜸  -->
+<a href="http://localhost:8080/html_prj/day0124/Font.html">Font 페이지 이동</a><br/>
+<a href="http://localhost:8080/html_prj/day0124/link_a/a.html">하위 폴더 내 페이지 이동</a><br/>
+<a href="http://localhost:8080/html_prj/day0123/hello.html">다른 폴더 내 페이지 이동</a><br/>
+<a href="http://localhost:8080/html_prj/day0123/link_b/b.html">다른 폴더 내 하위 폴더 b.html페이지 이동</a><br/>
+
+<strong>상대경로 사용</strong><br/>
+<a href="Font.html">Font 페이지 이동</a><br/>
+<a href="link_a/a.html">하위 폴더 내 페이지 이동</a><br/>
+<a href="../day0123/hello.html">다른 폴더 내 hello페이지 이동</a><br/>   <!--../ 안붙이면 이동X  -->
+<a href="../day0123/link_b/b.html">다른 폴더 내 하위 폴더 b.html페이지 이동</a><br/>
+
+<!-- 파일을 다른 폴더에 옮겼을 경우 ../로 올려준다. 이러한 단점이 있어서 URL로 사용하는편이 좋다.-->
+<strong>상대경로 사용</strong><br/>
+<a href="../Font.html">Font 페이지 이동</a><br/>
+<a href="../link_a/a.html">하위 폴더 내 페이지 이동</a><br/>
+<a href="../../day0123/hello.html">다른 폴더 내 hello페이지 이동</a><br/>   <!--../ 안붙이면 이동X  -->
+<a href="../../day0123/link_b/b.html">다른 폴더 내 하위 폴더 b.html페이지 이동</a><br/>
+
+
+<!-- <strong>절대경로(절대 사용하지 말아야 할 경로)사용</strong>
+<a href="C:\dev\workspace\html_prj\WebContent\day0124\Font.html">font 페이지 이동</a>  -->
+<strong>새창</strong>
+<!-- target="프레임의 이름" 프레임의 이름이 없다면 새창으로 뜬다.  -->
+<a href="http://daum.net" target="about:NewsFeed">다음</a>
+<br/>
+
+
+<p>
+<a name="kim"></a>
+	<h1>김정윤</h1>
+	<h2>수강생/30세(남)</h2>
+	<h3>대구에서 태어나서 철권을 사랑하는 젊은이로..</h3>
+	<a href=#top>위로</a>
+</p>
+
+<p>
+<a name="gong"></a>
+	<h1>공선의</h1>
+	<h2>수강생/28세(남)</h2>
+	<h3>청주에서 태어나 서울에서 살고있으며 돈을 좋아하는 ....</h3>
+	<a href=#top>위로</a>
+</p>
+
+<p>
+<a name="jung"></a>
+	<h1>정택성</h1>
+	<h2>수강생/27세(남)</h2>
+	<h3>서울에서 구로구 태어나 그 지역에서 살고 있으며 댄스를 좋아하던 이 청년은
+	나중에 자라서 훌륭한 개발자가 됩니다 ....</h3>
+	<a href=#top>위로</a>  <!--위에 #top으로 설정해둔곳으로 올려준다.  -->
+</p>
+</body>
+</html>

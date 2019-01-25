@@ -45,6 +45,7 @@ public class TestJTable  extends JFrame{
 				return false;
 			};
 			
+			
 			public Class getColumnClass(int column) {
 				return getValueAt(0, column).getClass();
 			}

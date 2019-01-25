@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>테이블 사용</title>
+</head>
+<body>
+	<table border="1">
+		<thead>
+				<tr>
+					<th>번호</th>
+					<th>이름</th>
+					<th>나이</th>
+				</tr>
+		<thead>
+		
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>공선의</td>
+				<td>28</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>김정윤</td>
+				<td>30</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>박영민</td>
+				<td>27</td>
+			</tr>
+		</tbody>
+			
+		<tfoot>	
+			<tr>
+				<td>4</td>
+				<td>나이의 합</td>
+				<td>85</td>
+			</tr>
+		</tfoot>	
+	</table>
+	
+<hr color="#333333">
+<strong>cellspacing, cellpadding</strong>
+<table border="1" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>서울시 관악구 구암중학교</td>
+    <td>역삼중학교</td>
+  </tr>
+  <tr>
+    <td>청학공고</td>
+    <td>평촌공고</td>
+  </tr>
+</table>
+
+<hr color="#37722">
+<strong>넓이, 높이, 바닥색, 선색</strong>
+<!-- <table border="1" width="400" height="200"> -->
+<!-- <table border="1"  bgcolor="#CDE1C9" bordercolor="#02F868"> -->
+<table border="1"  bgcolor="#CDE1C9" bordercolorlight="#FF0000" bordercolordark="#0000FF">
+  <tr height="80" bgcolor="#71A56C"> <!-- 속성의 상속 : tr(부모)에 주게되면  td(자식)는 전부 같은 기능을 갖게된다. 자식은 그 색깔이 맘에 안들면 따로 기능을 주면됨-->
+    <td width="300" height="80" bgcolor="#37222">서울시 관악구 구암중학교</td>  <!-- td에서 직접 width를 주기도 한다.  -->
+    <td width="200" height="80">역삼중학교</td>
+  </tr>
+  <tr height="80">
+    <td>청학공고</td>
+    <td>평촌공고</td>
+  </tr>
+</table>
+
+<hr color="#37722">
+<table background="http://localhost:8080/html_prj/day0125/common/images/sist_logo.jpg">
+  <tr>
+    <td width="300"  height="300" background="http://localhost:8080/html_prj/common/images/img.png">김정윤</td>
+    <td width="300"  height="300" background="../common/images/img1_1.png">정택성</td>
+  </tr>
+  <tr>
+    <td height="100">2조에서 얼굴을 담당하고 있는 김정윤입니다.</td>
+    <td>1조에서 댄스를 담당하고 있는 정택성입니다.</td>
+  </tr>
+</table>
+
+<hr color="#444444">
+<strong>정렬</strong>
+<table border="1" align="right">
+  <tr height="100" align="center">
+    <td width="100" align="left">김정운</td>
+    <td width="100">이재찬</td>
+    <td width="100" align="right">정택성</td>
+    <td width="100" valign="top">이봉현</td>
+    <td width="100" valign="bottom">백인재</td> <!-- 테이블에는 valign 사용못함  -->
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+
+</body>
+</html>
