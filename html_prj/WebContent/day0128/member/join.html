@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<table border="1" cellspacing="0">
+  <tr>
+    <td colspan="3" width=410 align="center">회원가입</td>
+  </tr>
+  <tr>
+    <td >아이디</td><td colspan="2"><input type="text" name="id" size="30" readonly="readonly" >
+    <input type="button" value="중복확인"/></td>
+  </tr>
+  <tr>
+  	<td>비밀번호 </td><td colspan="2"><input type="password" name="pass" size="30" maxlength="20"/></td>
+  </tr>
+  <tr>
+  	<td>비밀번호 확인</td><td colspan="2"><input type="password" name="pass" size="30" maxlength="20"/></td>
+  </tr>
+  <tr>
+  	<td>이름</td><td colspan="2"><input type="text" name="text" width="60" maxlength="20"/></td>
+  </tr>
+  <tr>
+  	<td>주민번호</td><td ><input type="text" name="text" size="10" maxlength="6" /> -
+  	<input type="password" name="pass"  size="10" maxlength="7"/></td>
+  </tr>
+  <tr>
+  	<td>성별</td><td align="Center"><input type="radio" value="남자" name="gender">남자
+  	<input type="radio" vlaue="여자" name="gender">여자
+  </tr>
+  <tr>
+  	<td colspan="3">생년월일&nbsp;&nbsp;&nbsp;
+  	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="year">
+  		<option>2019</option>
+  		<option>2018</option>
+  		<option>2017</option>
+  	</select>년
+  	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="year">
+  		<option>1</option>
+  		<option>2</option>
+  		<option>3</option>
+  		<option>4</option>
+  		<option>5</option>
+  		<option>6</option>
+  		<option>7</option>
+  		<option>8</option>
+  		<option>9</option>
+  		<option>10</option>
+  		<option>11</option>
+  		<option>12</option>
+  	</select>월
+  	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="year">
+  		<option>1</option>
+  		<option>2</option>
+  		<option>3</option>
+  	</select>일
+  	</td>
+  </tr>
+  <tr>
+  	<td>나이</td><td colspan="2"><input type="text"  maxlength="3"/></td>
+  </tr>
+  <tr>
+  	<td>관심언어</td><td colspan="2">
+  	<input type="checkbox" value="Java" name="it">Java
+  	<input type="checkbox" value="c/c++" name="it">c/c++
+  	<input type="checkbox" value="python" name="it">python
+  	<input type="checkbox" value="VB" name="it">VB<br/>
+  	<input type="checkbox" value="JSP" name="it">JSP
+  	<input type="checkbox" value="Servlet" name="it">Servlet
+  	<input type="checkbox" value="ASP" name="it">"ASP"
+  	<input type="checkbox" value="php" name="it">php
+  	</td>
+  </tr>
+  <tr>
+  	<td>결혼여부</td><td colspan="2">
+  	<input type="radio" value="미혼" name="marry" checked="checked">미혼
+  	<input type="radio" value="기혼" name="marry" />기혼
+  	</td>
+  </tr>
+  <tr>
+  	<td>결혼기념일</td><td>
+  	<input type="text" name="text"  size="5">년
+  	<input type="text" name="text"  size="5">월
+  	<input type="text" name="text"  size="5">일
+  	</td>
+  </tr>
+  <tr>
+  	<td>우편번호</td><td>
+  	<input type="text" name="text" readonly="readonly"  size="5">-
+  	<input type="text" name="text" readonly="readonly"  size="5">
+  	<input type="button" value="우편번호 검색"/>
+  	</td>
+  </tr>
+  <tr>
+  	<td>주소</td><td>
+  	<input type="text" name="text" readonly="readonly">
+  	</td>
+  </tr>
+  <tr>
+  	<td>상세주소</td><td>
+  	<input type="text" name="text" readonly="readonly">
+  	</td>
+  </tr>
+  <tr>
+  	<td>가입인사</td><td>
+  	<textarea row="10" cols="40" name="ta"></textarea>
+  	</td>
+  </tr>
+  <tr>
+  	<td colspan="3" align="Center"><input type="submit" value="가입"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="초기화"/></td>
+  </tr>
+  
+</table>
+
+</body>
+</html>
