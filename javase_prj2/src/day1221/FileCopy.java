@@ -73,7 +73,8 @@ public class FileCopy extends JFrame implements ActionListener, Runnable {
 			JOptionPane.showMessageDialog(this, file+"복사 성공");
 		}catch(IOException ie) {
 		}finally {
-			if( fis != null ) { try {
+			if( fis != null ) { 
+				try {
 				fis.close();
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -88,6 +89,7 @@ public class FileCopy extends JFrame implements ActionListener, Runnable {
 		}//end finally
 	}//run
 
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		FileDialog fd=new FileDialog(this, "파일선택", FileDialog.LOAD);

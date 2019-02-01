@@ -17,7 +17,7 @@ public class UseFileOutputStream {
 	public void useFileOutputStream() throws IOException { // Close 하기위해서 예외처리 한다.
 		int i = 65;
 		// 1. File class생성
-		File file = new File("c:/dev/temp/java_write.txt");
+		File file = new File("c:/dev/temp/java_write22.txt");
 		// 2. FileOutputStream 생성 -> 입력된 경로에 파일이 생성된다.
 //		FileOutputStream fos = new FileOutputStream(file); // ->파일생성이 된다. 하지만
 		// 파일이 없다면 생성하고, 파일이 있다면 덮어 쓴다. (아무 메세지도 없이 그냥 덮어씌워 버린다)

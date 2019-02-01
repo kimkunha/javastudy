@@ -39,10 +39,10 @@ public class GetSubData extends JFrame {
 		
 		String dirName = br.readLine();
 		
-		File file = new File(dirName);
+		File fileName = new File(dirName);
 		
-		if (file.isDirectory()) {
-			getFileData(file);
+		if (fileName.isDirectory()) {
+			getFileData(fileName);
 		} else {
 			System.err.println("파일은 취급하지 않습니다.");
 		} // end else
@@ -58,7 +58,7 @@ public class GetSubData extends JFrame {
 		SimpleDateFormat sdf =
 				new SimpleDateFormat("yyyy-MM-dd a HH:mm");
 		
-		Date d;
+		Date d=null;
 		
 		// 해당 디렉터리의 하위 디렉터리, 파일의 정보를 받아오면 된다.
 		// 이걸 수행하는 method는? listFiles()

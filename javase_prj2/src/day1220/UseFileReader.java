@@ -7,38 +7,38 @@ import java.io.IOException;
 
 import javax.swing.JMenu;
 
-//18.12.20	-1¹ø ÀÚ·á-	()
+//18.12.20	-1ë²ˆ ìë£Œ-	()
 /**
- * 16bit Stream¸¸ »ç¿ëÇÏ¿© ÆÄÀÏ ÀĞ±â
+ * 16bit Streamë§Œ ì‚¬ìš©í•˜ì—¬ íŒŒì¼ ì½ê¸°
  * 
  * @author owner
  */
 public class UseFileReader {
 
-	public void useFileReader() throws IOException { // closeÇÏ±â À§ÇØ »ı¼ºÀÚ¿¡¼­ ¿¹¿ÜÃ³¸® ÇÑ´Ù. ÄÚµå¸¦ °£¼ÒÇÏ±âÀ§ÇØ
+	public void useFileReader() throws IOException { // closeí•˜ê¸° ìœ„í•´ ìƒì„±ìì—ì„œ ì˜ˆì™¸ì²˜ë¦¬ í•œë‹¤. ì½”ë“œë¥¼ ê°„ì†Œí•˜ê¸°ìœ„í•´
 		BufferedReader br = null;
 
 		File file = new File("c:/dev/temp/java_read.txt");
-		// 1. ±Ù¿øÁö ÆÄÀÏ¿¡ ½ºÆ®¸² ¿¬°á
+		// 1. ê·¼ì›ì§€ íŒŒì¼ì— ìŠ¤íŠ¸ë¦¼ ì—°ê²°
 //			FileReader fr=new FileReader(file);
-//			//2. ÁÙ´ÜÀ§ ÀĞ¾îµéÀÌ´Â ±â´ÉÀ» °¡Áø ½ºÆ®¸² ¿¬°á
+//			//2. ì¤„ë‹¨ìœ„ ì½ì–´ë“¤ì´ëŠ” ê¸°ëŠ¥ì„ ê°€ì§„ ìŠ¤íŠ¸ë¦¼ ì—°ê²°
 //			br=new BufferedReader(fr);
 
 		try {
-			// ÄÚµå °£¼ÒÈ­ ÇÏ±â
+			// ì½”ë“œ ê°„ì†Œí™” í•˜ê¸°
 			br = new BufferedReader(new FileReader(file));
 			String temp = "";
-			// T.A¸¦ ÃÊ±âÈ­ ÇÑ ÈÄ
+			// T.Aë¥¼ ì´ˆê¸°í™” í•œ í›„
 
-			// ÇÑÁÙ¾¿ ÀĞ¾îµé¿© ÀĞ¾îµéÀÎ ³»¿ëÀÌ Á¸ÀçÇÑ´Ù¸é
+			// í•œì¤„ì”© ì½ì–´ë“¤ì—¬ ì½ì–´ë“¤ì¸ ë‚´ìš©ì´ ì¡´ì¬í•œë‹¤ë©´
 			while ((temp = br.readLine()) != null) {
-
+				System.out.println(temp);
 			} // end while
 
 		} finally {
-			// ½ºÆ®¸²À» ´Ù ›§´Ù¸é ¿¬°áµÈ ½ºÆ®¸²À» ²÷´Â´Ù. Áß¿ä!
+			// ìŠ¤íŠ¸ë¦¼ì„ ë‹¤ ï¿½ã¢æ‘¸ï¿½ ì—°ê²°ëœ ìŠ¤íŠ¸ë¦¼ì„ ëŠëŠ”ë‹¤. ì¤‘ìš”!
 			if (br != null) {
-				br.close();// end if //¿¬°áÀÌ µÇ¾úÀÖµç ¾Æ´Ïµç ²÷¾îÁà
+				br.close();// end if //ì—°ê²°ì´ ë˜ì—ˆìˆë“  ì•„ë‹ˆë“  ëŠì–´ì¤˜
 			}
 		} // end finally
 
