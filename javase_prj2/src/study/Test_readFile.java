@@ -1,4 +1,4 @@
-package study.test;
+package study;
 
 import java.awt.FileDialog;
 import java.io.BufferedReader;
@@ -15,13 +15,13 @@ import javax.swing.JOptionPane;
 
 import oracle.net.ns.MarkerPacket;
 
-public class test_log extends JFrame{
+public class Test_readFile extends JFrame{
 
 	Map<String, Integer>mapKey;
 	File file;
 	
 	
-	public test_log() {
+	public Test_readFile() {
 		initInstance();
 		fdOpen();
 		try {
@@ -70,7 +70,7 @@ public class test_log extends JFrame{
 	
 	
 	public static void main(String[] args) {
-		new test_log();
+		new Test_readFile();
 	}//main
 
 }//class
