@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/html_prj/common/css/main_v190130.css"/>
+<style type="text/css">
+table{ }
+th,td{width: 200px; height: 200px;}
+</style>
+<script type="text/javascript">
+
+	var row =prompt("행의수","행의 수를 입력하세요.");
+		var arr=new Array(row);
+		document.write("arr 의 행의 수 : "+arr+"</br>");
+	
+	var column =prompt("열의수","열의 수를 입력하세요.");
+		arr[column] = new Array();	
+	document.write("arr 의 행의 수 : "+column+"</br>");
+	
+	var lineColor =prompt("선 색","예)#FF0000");
+	
+	document.write("<table border='1' color='lineColor'>");
+	document.write("<thead>");
+	document.write("<tr>");
+	document.write("<th></th>");
+	document.write("</tr>");
+	document.write("</thead>");
+	document.write("<tbody>");
+	
+	for(var i=0; i<arr.length; i++){
+		doucument.write("<tr>");
+		doucument.write( "<td>"+(i+1)+"</td>");
+		for( var j=0; j<arr[i].length; j++){
+		doucument.write( "<td>"+arr[i][j]+"</td>");
+		}//end for
+		doucument.write( "</tr>");
+	}//end for
+	
+	document.write("</tbody>");
+	document.write("</table>");
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

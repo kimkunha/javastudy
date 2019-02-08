@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/html_prj/common/css/main_v190130.css"/>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+//배열 생성
+//1. 생성) var 배열명 = new Array();
+var arr=new Array();
+//2. 값 할당 : 방의 수가 증가 - 가변길이형, 모든 방의 값이 동일 데이터형이 아닐 수도 있다.
+arr[0]=2;
+arr[1]=2.8;
+arr[2]="오늘은 금요일";
+arr[3]=true;
+console.log("방의 갯수 : "+arr.length );
+
+//3. 값 사용
+document.write(arr[0]);
+//4. 모든 방의 값 출력
+document.write("<ui>");
+for( var i=0; i< arr.length; i++){
+	document.write("<li>"+i+"번째방 : "+arr[i]+"</li>")
+	}//end for
+document.write("</ui>");
+	
+////////////////////////////////////////////////////////////배열의 초기화	
+//1. 초기화 : var 배열명=[값 .........];
+	var nameArr=[ "공선의",  "이재현",  "최지우",  "김정윤", "박영민"     ];
+	nameArr[5]="김건하";  //값도 들어가고 방의 증가도 된다.
+	document.write("방의 갯수 : "+nameArr.length+"</br>");
+	
+	//배열의 값을 <input type="text">의 값으로 출력
+	for( var i=0; i<nameArr.length; i++){
+		document.write("이름 : ");
+		document.write("<input type=\"text\" value=\""+nameArr[i]+"\"><br/>");
+	}//end for
+	
+	//배열을 생성하여 구구단 2단의 결과값을 처음 방부터 추가한후,
+	//체크 박스를 생성하여 출력
+	
+	var guguArr = new Array();
+	for(var i =2; i<3; i++){
+		for(var j=1; j<10; j++){
+			guguArr[j]=(i*j);
+		document.write(guguArr[j]);
+		document.write("<input type='checkbox'"+guguArr[j]+"></input>");
+		}
+	}
+	
+	//push와 pop 사용하기
+	//배열생성
+	var temp=[ "대추", "호두",  "밤",  "감",  "배", "사과", "애플망고" , "토마토"];
+	
+	//이런식으로 마지막 방 뒤에 값 추가 가능하지만,
+	temp[temp.length]="바나나";
+	
+	//가장 마지막 방에 값을 추가하는 함수 : push();이 더 좋음
+	temp.push("감귤");
+	temp.push("망고스틴");
+	
+	//가장 마지막 방의 값을 꺼내는 함수 (방의 수가 줄어든다.) : pop()
+	temp.pop(); 
+	temp.pop(); //계속 pop()를 하면 마지막 방에서 부터 한개씩 값이 추출된다.
+	result=temp.pop(); //값을 꺼내서 임의의변수 temp에 담음
+	
+	//특정 인덱스 사이의 값을 삭제 : splice(시작인덱스, 끝인덱스)
+	temp.splice(1,2); //시작인덱스, 지울방의 갯수
+	
+	for( var i=0; i< temp.length; i++){
+		document.write(temp[i]+"<br/>");
+	}//end for
+	
+	document.write("<br/>pop으로 뺀 추출값 result : "+result+"</br>");
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

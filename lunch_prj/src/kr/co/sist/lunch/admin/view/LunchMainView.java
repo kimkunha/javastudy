@@ -207,13 +207,11 @@ public LunchMainView(String adminName ) {
 }//생성자
 
 	private void setYear() { //현재년도 4년전까지
-		
 		int year=cal.get(Calendar.YEAR); //현재년도
 		for (int temp=0; temp<4; temp++) {
 			cbmYear.addElement(year-temp);
 		}//end for
 		jcbYear.setSelectedItem(new Integer(year));
-		
 		
 	}//setYear
 	
